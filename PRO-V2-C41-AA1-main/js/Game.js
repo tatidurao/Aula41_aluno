@@ -7,7 +7,7 @@ class Game {
 
     this.leader1 = createElement("h2");
     this.leader2 = createElement("h2");
-    this.playerMoving = false;
+   
   }
 
   getState() {
@@ -159,20 +159,13 @@ class Game {
           camera.position.y = cars[index - 1].position.y;
         }
       }
-
+      /*Aluno fazer gastar combustivel*/
+      
       //manipulando eventos de teclado
       this.handlePlayerControls();
 
-      //Linha de chegada
-      const finshLine = height * 6 - 100;
-
-      if (player.positionY > finshLine) {
-        gameState = 2;
-        player.rank += 1;
-        Player.updateCarsAtEnd(player.rank);
-        player.update();
-        this.showRank();
-      }
+      //Linha de chegada Aluno Fazer
+     
 
       drawSprites();
     }
@@ -202,14 +195,7 @@ class Game {
   }
 
   showFuelBar() {
-    push();
-    image(fuelImage, width / 2 - 130, height - player.positionY - 250, 20, 20);
-    fill("white");
-    rect(width / 2 - 100, height - player.positionY - 250, 185, 20);
-    fill("#ffc400");
-    rect(width / 2 - 100, height - player.positionY - 250, player.fuel, 20);
-    noStroke();
-    pop();
+   
   }
 
   showLeaderboard() {
@@ -280,6 +266,8 @@ class Game {
       //o evento
       collected.remove();
     });
+
+    /*Aluno fazer*/
   }
 
   handlePowerCoins(index) {
